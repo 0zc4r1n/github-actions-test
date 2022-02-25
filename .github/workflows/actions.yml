@@ -12,8 +12,10 @@ jobs:
           ls -a
           echo $GITHUB_SHA
           echo $GITHUB_REPOSITORY
+          export PROJECT_NAME=$(basename $GITHUB_REPOSITORY)
           echo $GITHUB_WORKSPACE
           echo "${{ github.token }}"
+          echo $PROJECT_NAME
 #          git clone git@github:$GITHUB_REPOSITORY
 #          git checkout $GITHUB_SHA
       - name: Checkout
